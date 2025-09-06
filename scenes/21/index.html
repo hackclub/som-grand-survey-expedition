@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigloo Island - Scene 21</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #1a3b5d, #2c5282, #1a3b5d);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #e0f7fa;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .frost-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, 
+                    transparent 50%, rgba(255,255,255,0.1) 50%, 
+                    rgba(255,255,255,0.1) 75%, transparent 75%);
+            background-size: 10px 10px;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.3;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 30px;
+            background: rgba(13, 33, 53, 0.9);
+            border: 8px dashed #87CEEB;
+            border-radius: 30px;
+            box-shadow: 0 0 50px rgba(135, 206, 235, 0.3),
+                        inset 0 0 30px rgba(173, 216, 230, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 4px dotted rgba(135, 206, 235, 0.3);
+            border-radius: 35px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px wavy #4fc3f7;
+            position: relative;
+        }
+
+        .header::after {
+            content: '❄️';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            background: #1a3b5d;
+            padding: 0 10px;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            text-shadow: 3px 3px 0 #2c5282, 
+                        6px 6px 0 #1a3b5d,
+                        0 0 20px rgba(135, 206, 235, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            color: #4fc3f7;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #a8d0e6;
+            font-size: 1.2em;
+            text-shadow: 0 0 10px rgba(135, 206, 235, 0.5);
+        }
+
+        .island-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .island-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            border: 5px solid #4fc3f7;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .island-image img {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .island-info {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(26, 59, 93, 0.6);
+            padding: 25px;
+            border: 3px solid #4fc3f7;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .island-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="%234fc3f7" stroke-width="2" fill="none" /></svg>');
+            background-size: 200px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .mr-crickle {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            height: 150px;
+            transition: all 0.5s ease;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .mr-crickle img {
+            width: 100%;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+            transition: all 0.3s ease;
+            border-radius: 50%;
+        }
+
+        .mr-crickle:hover img {
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .crickle-talk {
+            position: absolute;
+            bottom: 180px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #1a3b5d;
+            padding: 15px;
+            border-radius: 20px;
+            border: 2px solid #4fc3f7;
+            max-width: 200px;
+            font-size: 0.9em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .mr-crickle:hover + .crickle-talk {
+            opacity: 1;
+        }
+
+        .pathways {
+            background: rgba(13, 33, 53, 0.8);
+            padding: 30px;
+            border: 3px dashed #4fc3f7;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .pathway {
+            display: block;
+            background: linear-gradient(45deg, #2c5282, #1a3b5d);
+            color: white;
+            padding: 20px;
+            margin: 15px 0;
+            text-decoration: none;
+            border: 2px solid #4fc3f7;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pathway::before {
+            content: '🧊';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+        }
+
+        .pathway:hover {
+            background: linear-gradient(45deg, #1a3b5d, #2c5282);
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(79, 195, 247, 0.3);
+        }
+
+        .pathway-description {
+            font-style: italic;
+            color: #a8d0e6;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #4fc3f7;
+            color: #a8d0e6;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            75% { transform: translateX(2px); }
+        }
+
+        /* Snowflake animation */
+        .snowflake {
+            position: fixed;
+            color: #ffffff;
+            font-size: 1.5em;
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 99;
+            top: -10%;
+            animation-name: fall;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10%) rotate(0deg);
+                opacity: 0.7;
+            }
+            80% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .messy-stamp {
+            position: absolute;
+            transform: rotate(15deg);
+            opacity: 0.8;
+            font-size: 3em;
+            color: #ff6b6b;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        @media (max-width: 768px) {
+            .island-content {
+                flex-direction: column;
+            }
+            
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .mr-crickle {
+                width: 80px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="frost-overlay"></div>
+
+    <!-- Animated snowflakes container -->
+    <div id="snowflakes"></div>
+
+    <!-- Messy stamps -->
+<div class="messy-stamp" style="top: 10%; left: 5%;">ARRR!</div>
+<div class="messy-stamp" style="top: 80%; right: 10%; transform: rotate(-10deg); color: #4fc3f7;">Cold!</div>
+<div class="messy-stamp" style="top: 40%; left: 8%; transform: rotate(5deg); color: #ffd166;">TREASURE!</div>
+
+    <div class="container">
+        <div class="header">
+            <h1>BIGLOO ISLAND</h1>
+            <div class="subtitle">Originally called "Big Igloo Island", but the name got frozen off at some point.</div>
+            <div class="subtitle">Scene 21 - Home of Mr. Crickle and his icy shenanigans</div>
+        </div>
+
+        <div class="island-content">
+            <div class="island-image">
+                <img src="./assets/bigloo-island.jpg" alt="Bigloo Island - A frosty paradise">
+                
+                <!-- Mr. Crickle with speech bubble -->
+                <div class="mr-crickle" id="crickle">
+                    <img src="./assets/mr-crickle.jpg" alt="Mr. Crickle the sea dog">
+                </div>
+                <div class="crickle-talk">
+                    Arr matey! This island be colder than a polar bear's pajamas! Bring me some hot cocoa and I'll show ye the treasure!
+                </div>
+            </div>
+            
+            <div class="island-info">
+                <h2>About Bigloo Island</h2>
+                <p>Bigloo Island is the frostiest place in all of Hacklantis! Despite its chilly exterior, it's home to the warmest-hearted sea dog in the seven seas - Mr. Crickle!</p>
+                
+                <h3>Island Features:</h3>
+                <ul>
+                    <li>Frozen Igloo Palace (slightly melted)</li>
+                    <li>Icy Slide of Doom (watch your step!)</li>
+                    <li>Snowball Fighting Arena</li>
+                    <li>Mr. Crickle's Treasure Cave (if you can find it)</li>
+                    <li>Frostbite Falls (bring a jacket)</li>
+                </ul>
+                
+                <h3>Visitor Tips:</h3>
+                <p>Don't forget to pack your warmest socks and a sense of adventure! Mr. Crickle might challenge you to a snowball fight, so be prepared!</p>
+            </div>
+        </div>
+
+        <div class="pathways">
+            <h3 style="text-align: center; color: #4fc3f7; margin-bottom: 20px;">🚪 Pathways from Bigloo Island</h3>
+            
+            <a href="/scenes/30/" class="pathway">
+                <strong>To the Volcanic Forge (Scene 30)</strong>
+                <div class="pathway-description">Follow the steam vents through the glacial tunnel to reach the fiery mountains</div>
+            </a>
+
+            <a href="/scenes/33/" class="pathway">
+                <strong>To the Crystal Caves (Scene 33)</strong>
+                <div class="pathway-description">A hidden passage behind the icefall leads to glittering crystal formations</div>
+            </a>
+
+            <div class="pathway" style="background: linear-gradient(45deg, #4a5568, #2d3748); cursor: not-allowed; opacity: 0.7;">
+                <strong>From the Whispering Woods (Incoming)</strong>
+                <div class="pathway-description">The frozen river flows from the ancient forest, but the current is too strong to return that way</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Bigloo Island is part of the Hack Club Summer of Making Grand Survey Expedition</p>
+            <p>Mr. Crickle &copy; 2025 - All treats reserved</p>
+        </div>
+    </div>
+
+    <script>
+        // Create animated snowflakes
+        function createSnowflakes() {
+            const snowContainer = document.getElementById('snowflakes');
+            const flakeCount = 50;
+            const snowflakeSymbols = ['❄', '❅', '❆', '*'];
+            
+            for (let i = 0; i < flakeCount; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'snowflake';
+                flake.innerHTML = snowflakeSymbols[Math.floor(Math.random() * snowflakeSymbols.length)];
+                
+                // Randomize snowflake properties
+                const size = Math.random() * 15 + 10;
+                const left = Math.random() * 100;
+                const animationDuration = Math.random() * 10 + 5;
+                const animationDelay = Math.random() * 5;
+                const opacity = Math.random() * 0.5 + 0.3;
+                
+                flake.style.fontSize = `${size}px`;
+                flake.style.left = `${left}vw`;
+                flake.style.animationDuration = `${animationDuration}s`;
+                flake.style.animationDelay = `${animationDelay}s`;
+                flake.style.opacity = opacity;
+                
+                snowContainer.appendChild(flake);
+            }
+        }
+
+        // Move Mr. Crickle around
+        function moveCrickle() {
+            const crickle = document.getElementById('crickle');
+            const container = document.querySelector('.island-image');
+            
+            setInterval(() => {
+                const maxX = container.offsetWidth - crickle.offsetWidth;
+                const maxY = container.offsetHeight - crickle.offsetHeight;
+                
+                const newX = Math.random() * maxX;
+                const newY = Math.random() * maxY;
+                
+                crickle.style.transition = 'all 2s ease-in-out';
+                crickle.style.left = `${newX}px`;
+                crickle.style.bottom = `${newY}px`;
+            }, 5000);
+        }
+
+        // Interactive background effect
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            document.body.style.background = `
+                linear-gradient(${45 + x * 10}deg, 
+                #1a3b5d, 
+                #2c5282 ${20 + y * 30}%, 
+                #1a3b5d)
+            `;
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            createSnowflakes();
+            moveCrickle();
+            
+            // Add periodic ambient effects
+            setInterval(() => {
+                document.querySelector('h1').classList.toggle('pulse');
+            }, 2000);
+        });
+
+        // Make Mr. Crickle interactive
+        document.getElementById('crickle').addEventListener('click', function() {
+            const messages = [
+                "Arrr! Ye found me!",
+                "Shiver me timbers, it's cold here!",
+                "Looking for treasure? Follow the icy path!",
+                "I once wrestled a polar bear with my bare paws!",
+                "Have ye any hot cocoa? Me bones be chilly!"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            alert(`Mr. Crickle says: "${randomMessage}"`);
+        });
+    </script>
+</body>
+</html>
