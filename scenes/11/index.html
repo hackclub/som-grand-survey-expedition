@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Mount Kablooey Summit Gift Shop</title>
+    <style>
+        .invisible-button {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .bottom-left {
+            bottom: 2%;
+            left: 5%;
+        }
+
+        .bottom-right {
+            bottom: 2%;
+            right: 2%;
+        }
+
+        .top-left {
+            top: 2%;
+            left: 2%;
+        }
+
+        body {
+            position: relative;
+        }
+
+        .shop-background {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url('assets/ShopBackground.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 70%;
+            height: 70%;
+            z-index: 5;
+            pointer-events: none;
+            margin-left: 150px;
+            
+        }
+
+        .shop-item {
+            position: absolute;
+            z-index: 15;
+            text-align: center;
+            font-family: 'Brush Script MT', 'Lucida Handwriting', 'Segoe Print', cursive;
+            color: #2F4F4F;
+        }
+
+        .item-name {
+            font-size: 2.7em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2C2C54;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+        }
+
+        .item-price {
+            font-size: 1.92em;
+            color: #B8860B;
+            margin-bottom: 19px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .buy-button {
+            background-image: url('assets/buy.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 115px;
+            height: 58px;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        .item1 { top: 32.5%; left: 36.5%; }
+        .item2 { top: 35%; left: 52.5%; }
+        .item3 { top: 62%; left: 35.5%; }
+        .item4 { top: 62%; left: 53%; }
+    </style>
+</head>
+<body style="background-image: url('assets/Background mountain.jpg'); background-size: contain; background-repeat: no-repeat; background-position: center; min-height: 100vh">
+    <div style="text-align: center; padding-top: 80px;">
+    <h1 style="color: #8B4513; font-family: 'Georgia', 'Times New Roman', serif; font-size: 3em; font-weight: bold; margin: 20px 0; letter-spacing: 2px;">Mount Kablooey Summit Gift Shop</h1>
+    
+    <div class="shop-background"></div>
+    
+    <div class="shop-item item1">
+        <div class="item-name">Mug</div>
+        <div class="item-price">$35</div>
+        <button class="buy-button" onclick="buyItem('Mug')"></button>
+    </div>
+    
+    <div class="shop-item item2">
+        <div class="item-name">T-Shirt</div>
+        <div class="item-price">$69</div>
+        <button class="buy-button" onclick="buyItem('T-Shirt')"></button>
+    </div>
+    
+    <div class="shop-item item3">
+        <div class="item-name">Postcard</div>
+        <div class="item-price">$5</div>
+        <button class="buy-button" onclick="buyItem('Postcard')"></button>
+    </div>
+    
+    <div class="shop-item item4">
+        <div class="item-name">Keychain</div>
+        <div class="item-price">$2</div>
+        <button class="buy-button" onclick="buyItem('Keychain')"></button>
+    </div>
+    
+    <script>
+        function buyItem(itemName) {
+            alert('You bought a ' + itemName + '!');
+        }
+    </script>    
+    <a href="/scenes/7/"><button class="invisible-button top-left"></button></a>
+    <a href="/scenes/97/"><button class="invisible-button bottom-left"></button></a>
+    <a href="/scenes/54/"><button class="invisible-button bottom-right"></button></a>
+</body>
+</html>
