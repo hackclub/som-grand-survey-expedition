@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                font-family: 'Georgia', serif;
+                background: linear-gradient(135deg, #87CEEB 0%, #4682B4 100%);
+                margin: 0;
+                padding: 20px;
+                min-height: 100vh;
+            }
+            
+            .story-container {
+                max-width: 800px;
+                margin: 0 auto;
+                background: rgba(255, 255, 255, 0.9);
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+            
+            h1 {
+                color: #2c3e50;
+                text-align: center;
+                font-size: 2.5em;
+                margin-bottom: 30px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            .story-text {
+                font-size: 1.1em;
+                line-height: 1.6;
+                color: #34495e;
+                margin-bottom: 30px;
+            }
+            
+            .seal-sound {
+                font-weight: bold;
+                font-size: 1.3em;
+                color: #e74c3c;
+                text-align: center;
+                margin: 20px 0;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            }
+            
+            .letter {
+                background: linear-gradient(45deg, #f4f1e8 0%, #e8e0d0 100%);
+                border: 3px solid #8b7355;
+                border-radius: 10px;
+                padding: 30px;
+                margin: 30px auto;
+                max-width: 500px;
+                position: relative;
+                box-shadow: 
+                    0 5px 15px rgba(0, 0, 0, 0.3),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+                transform: rotate(-1deg);
+                transition: transform 0.3s ease;
+            }
+            
+            .letter:hover {
+                transform: rotate(0deg) scale(1.02);
+            }
+            
+            .letter::before {
+                content: '';
+                position: absolute;
+                top: -5px;
+                left: -5px;
+                right: -5px;
+                bottom: -5px;
+                background: #654321;
+                border-radius: 12px;
+                z-index: -1;
+                opacity: 0.3;
+            }
+            
+            .letter::after {
+                content: '';
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                background: radial-gradient(circle, #8b4513 30%, transparent 31%);
+                border-radius: 50%;
+                opacity: 0.6;
+            }
+            
+            .letter-header {
+                text-align: center;
+                font-family: 'Courier New', monospace;
+                font-size: 0.9em;
+                color: #5d4e37;
+                margin-bottom: 20px;
+                border-bottom: 1px dashed #8b7355;
+                padding-bottom: 10px;
+            }
+            
+            .letter-content {
+                font-family: 'Courier New', monospace;
+                font-size: 1.1em;
+                line-height: 1.8;
+                color: #2c1810;
+                text-align: left;
+            }
+            
+            .letter-signature {
+                text-align: right;
+                margin-top: 25px;
+                font-style: italic;
+                color: #5d4e37;
+            }
+            
+            .aged-stains {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: rgba(139, 115, 85, 0.2);
+            }
+            
+            .stain-1 { top: 15%; left: 80%; width: 15px; height: 15px; }
+            .stain-2 { top: 60%; left: 10%; width: 25px; height: 25px; }
+            .stain-3 { bottom: 20%; right: 15%; width: 18px; height: 18px; }
+            
+            .water-drops {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: -1;
+            }
+            
+            .drop {
+                position: absolute;
+                background: rgba(173, 216, 230, 0.3);
+                border-radius: 50%;
+                animation: drop 3s infinite linear;
+            }
+            
+            @keyframes drop {
+                0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+                100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="water-drops">
+            <div class="drop" style="left: 10%; animation-delay: 0s; width: 4px; height: 4px;"></div>
+            <div class="drop" style="left: 20%; animation-delay: 0.5s; width: 6px; height: 6px;"></div>
+            <div class="drop" style="left: 30%; animation-delay: 1s; width: 3px; height: 3px;"></div>
+            <div class="drop" style="left: 40%; animation-delay: 1.5s; width: 5px; height: 5px;"></div>
+            <div class="drop" style="left: 50%; animation-delay: 2s; width: 4px; height: 4px;"></div>
+            <div class="drop" style="left: 60%; animation-delay: 2.5s; width: 6px; height: 6px;"></div>
+            <div class="drop" style="left: 70%; animation-delay: 0.8s; width: 3px; height: 3px;"></div>
+            <div class="drop" style="left: 80%; animation-delay: 1.3s; width: 5px; height: 5px;"></div>
+            <div class="drop" style="left: 90%; animation-delay: 1.8s; width: 4px; height: 4px;"></div>
+        </div>
+        
+        <div class="story-container">
+            <h1>🌋 Volcanic Island 🌋</h1>
+            
+            <div class="story-text">
+                <p>You look around the island, watching fumes coming out of the volcano...<br>Suddenly, you hear a sound!</p>
+            </div>
+            
+            <div class="seal-sound">ORF ORF ORF!</div>
+            
+            <div class="story-text">
+                <p>You slowly turn around and see a seal chilling at the beach.<br> You quickly run towards the seal, as you get closer, he slowly leaps away into the ocean.</p>
+                
+                <p>Then suddenly he comes out, but this time he's holding something! It's a bottle with a paper inside!</p>
+                
+                <p>You quickly grab the message in a bottle out of his snout, and start reading it.</p>
+            </div>
+            
+            <div class="letter">
+                <div class="aged-stains stain-1"></div>
+                <div class="aged-stains stain-2"></div>
+                <div class="aged-stains stain-3"></div>
+                
+                <div class="letter-header">
+                    ~ Message Found at Sea ~<br>
+                    Date Unknown
+                </div>
+                
+                <div class="letter-content">
+                    Whoever finds this message,<br><br>
+                    
+                    I have been stranded on this volcanic island for months now. 
+                    The volcano grows more restless each day, and I fear it may 
+                    erupt soon.<br><br>
+                    
+                    If you are reading this, please know that there is a hidden 
+                    treasure, large amounts of shells, buried beneath the old palm tree on the eastern shore. 
+                    search across the island, potentially at Scenes <a href="https://summer.hackclub.com/s?scene=11">11</a> or <a href="https://summer.hackclub.com/s?scene=48">48</a>.<br><br>
+                    
+                    Beware the island's guardian - a friendly seal who knows these 
+                    waters better than anyone. He may just be your salvation.<br><br>
+                    
+                    The island holds many secrets. Trust in the seal, and you may 
+                    find more than you bargained for.
+                </div>
+                
+                <div class="letter-signature">
+                    ~ Captain Maritime<br>
+                    Lost Explorer of the summer of making island
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
