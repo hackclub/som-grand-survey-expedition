@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Very Big Dune</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    body::-webkit-scrollbar{
+        display: none;
+    }
+
+    body{
+        overflow-x: hidden;
+        color: rgb(204, 204, 204)
+    }
+    section{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .title-wrap{
+        width: 100%;
+        height:100vh;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .title-wrap h1{
+        font-size: 1000%;
+    }
+
+    .planet-animation{
+        width:100%;
+        height: 100%;
+        position: absolute;
+        background: radial-gradient(circle at bottom, #63679b 0%, #343652 20%, #0d0e14 70%);
+        overflow: hidden;
+    }
+
+    .planet{
+        width:20vw;
+        height: 20vw;;
+        background: linear-gradient(rgb(149, 151, 8), rgb(199, 174, 30));
+        border-radius: 100%;
+        position: absolute;
+        animation: planet 3s;
+        left: 40vw;
+        bottom: 50vh;
+    }
+
+    @keyframes planet {
+        from{
+            bottom: -10vw;
+        }
+        to{
+            bottom: 50vh;
+        }
+    }
+
+    .basic-info-section{
+        background: radial-gradient(circle at top, #63679b 0%, #343652 20%, #0d0e14 70%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .basic-info{
+        width: 70%;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem
+
+    }
+
+    .basic-info p{
+        font-size: 200%;;
+        text-align: center;
+    }
+
+    table{
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 1rem;
+
+    }
+    tr{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+    }
+
+    .recent-news{
+        background:linear-gradient(0deg, #343652 , #0d0e14 80%); 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news{
+        border-top: 1px solid;
+        padding: 1rem;
+        width: 50vw;
+        text-align: center;
+    }
+
+    .italic{
+        font-style: italic;
+    }
+
+    .more{
+        background:linear-gradient(180deg, #343652 , #0d0e14 80%); 
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .more p{
+        font-size: 200%;
+    }
+
+    .more a{
+        color: rgb(204, 204, 204)
+    }
+    
+    
+</style>
+<script>
+
+</script>
+<body>
+    <section>
+    <div class="planet-animation">
+        <div class="planet"></div>
+    </div>
+    <div class = "title-wrap">
+    <h1>Big Dune</h1>
+    <h3>It's like Herbet's Dune but 3.14 times bigger!</h3>
+    </div>
+    </section>
+
+    <section class = "basic-info-section">
+        <div class="basic-info">
+            <p>Big Dune is unique place. Not only it is an entire planet hidden on an island it is also a home to special subspicies of sandworms - Big Sandworms. </p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Population</td>
+                        <td>42 sandworms</td>
+                    </tr>
+                    <tr>
+                        <td>Spice reserves</td>
+                        <td>estimates vary from a 1 grain to (10^42)^42</td>
+                    </tr>
+                    <tr>
+                        <td>Area</td>
+                        <td>Arrakis, but 3.14 times bigger</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="recent-news">
+        <h1>Recent news</h1>
+        <br>
+        <div class="news">
+            <p>Sandworm riding to be prohibited due to wildlife protection</p>
+        </div>
+        <div class="news">
+            <p class = "italic">"Rhytmic walking on sand completly safe" - Sandworm</p>
+        </div>
+        <div class="news">
+            <p class >Best recipe for spice tea</p>
+        </div>
+                <div class="news">
+            <p class >Mysterious apperance of a whale over the planet</p>
+        </div>
+        <div class="news">
+            <p class >Sand-cooled computer, better than water-cooling?</p>
+        </div>
+        <div class="news">
+            <p class >Dinosaur sighted on dunes</p>
+        </div>
+        <div class="news">
+            <p class >Best UV cream for sunny days</p>
+        </div>
+    </section>
+    <section class = "more">
+        <p>thanks for visiting big dune!</p>
+        <p>don't forget to check out other places</p>
+        <a href="https://summer.hackclub.com/s/">the island</a>
+        <a href="/secnes/99">The Silly Silly Hilly Silly Hills</a>
+        <a href="/secnes/92">Ancient Starbuck</a>
+    </section>
+</body>
+</html>
