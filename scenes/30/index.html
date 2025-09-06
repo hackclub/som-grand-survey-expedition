@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title> Scene 30: The Frozen Tomb</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/ice-age.png');
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #a4d4ff, #e6f8ff, #f0f0ff);
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #264654;
+            position: relative;
+        }
+
+        .description {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #244653;
+            position: relative;
+            z-index: 2;
+        }
+        .title { 
+            text-align: center;
+            padding: 20px;
+            font-size: 2.8rem;
+            color: #1a3252;
+            text-shadow: 0 0 10px rgba(255, 255, 255, .8), 0 0 20px rgba(173, 215, 230, .8);
+        }
+
+        .tomb-container {
+            width: 80%;
+            height: 60%;
+            margin: 0 auto;
+            background-color: rgba(220, 240, 255, .5);
+            border-radius: 10px;
+            border: 2px solid #a5d5ff;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 2;
+            position: relative;
+            box-shadow: 0 0 20px rgba(173, 215, 232, .8), inset 0 0 50px rgba(255, 255, 255, .55);
+        }
+
+        .ice-crystal {
+            background-color: rgba(255, 255, 255, .8);
+            border-radius: 50%;
+            filter: blur(1.5px);
+            animation: float 12s infinite linear;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+
+            } 50% {
+                transform: translateY(-20px) rotate(180deg);
+            } 100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class = "title">The Frozen Tomb</h1>
+    <p class = "description">This one's real cold! Which is good, considering what's inside.</p>
+    <div class = "tomb-container" id = "tombContainer">
+        <!-- tbf-->
+    </div>
+
+    <div class = "navigation">
+        <a href="../scenes/69/" class = "nav-link">Scene 69: The Best of All Possible Snowdrifts</a>
+        <a href="../scenes/71/" class = "nav-link">Scene 71: B.L.O.R.T.</a>
+    </div>
+
+    <script>
+        function createIceCrystals() {
+            const body = document.body;
+            for (let i = 0; i < 30; i++) {
+                const crystal = document.createElement('div');
+                crystal.classList.add('ice-crystal');
+
+                const size = Math.random() * 12 + 4;
+                crystal.style.width = `${size}px`;
+                crystal.style.height = `${size}px`; 
+                // got this from: https://www.w3schools.com/js/js_random.asp
+                crystal.style.top = `${Math.random() * 100}%`;
+                crystal.style.left = `${Math.random() * 100}%`;
+
+                crystal.style.animationDelay = `${Math.random() * 10}s`;
+
+                body.appendChild(crystal);
+            }
+        }
+
+        function init() {
+            createIceCrystals();
+
+            const tombContainer = document.getElementById('tombContainer');
+            tombContainer.addEventListener('click', () => {
+                alert("The ice is thick... something mysterious lies beneath here. Tread carefully.");
+            });
+        }
+
+        window.addEventListener('load', init);
+    </script>
+</body>
+
+</html>
