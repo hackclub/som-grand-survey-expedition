@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantVid</title>
+    <meta name="author" content="kapios">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <header>
+        <div id="title">
+            <img src="./assets/logo_white.svg" height="48" />
+            <span>PlantVid</span>
+        </div>
+        <span>Not related to any tube-based video services.</span>
+    </header>
+
+    <main>
+        <div id="video">
+            <div id="player"></div>
+            <div id="vidinfo">
+                <span id="title">&lbrack;86&rbrack; Answering Your Inquiries.</span>
+            </div>
+            <div id="commentsection">
+                <hr/>
+                <span id="title">Comments:</span>
+            </div>
+        </div>
+        <div id="recommended">
+            <span id="title">Recommended videos:</span>
+        </div>
+    </main>
+</body>
+</html>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+    body {
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(22, 65, 28);
+        font-family: 'Geist';
+        color: white
+    }
+
+    header {
+        position: sticky;
+        top:0;
+        height: 5rem;
+        background-color: #0f381d;
+        display: flex;
+        padding: 0rem 1rem;
+        gap: 1rem;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 4px ridge black;
+        border-radius: 0 0 2rem 2rem;
+        box-shadow: 0 0 1rem 0 rgb(15, 22, 15);
+
+        div#title {
+            font-weight: 900;
+            font-size: 1.9rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+    }
+
+    main {
+        padding: 2rem;
+        display: flex;
+        gap: 1rem;
+
+        & #video {
+            width: 66%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            #player {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                background-color: black;
+                border-radius: 1rem;
+                box-shadow: 0rem 0rem 5rem 1rem rgb(22, 32, 22);
+            }
+
+            #vidinfo > #title {
+                font-weight: 800;
+                font-size: x-large;
+            }
+
+            #commentsection {
+                flex-direction: column;
+                display: flex;
+                gap: 1rem;
+
+                hr {
+                    width: 100%;
+                }
+
+                #title {
+                    font-size: x-large;
+                    font-weight: 700;
+                }
+
+                .comment {
+                    background-color: #0f381d;
+                    padding: 1rem 2rem;
+                    border-radius: 1rem;
+                    b {
+                        margin-right: 0.7rem;
+                    }
+                }
+
+                .reply {
+                    b {
+                        color: #ccc;
+                    }
+                    margin-left: 4rem;
+                    color: #aaa;
+                }
+            }
+        }
+
+        #recommended {
+            width: 33%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            span#title {
+                text-decoration: 2px underline dotted;
+                text-underline-offset: 4px;
+            }
+
+            .thumbnail {
+                padding: 0.5rem;
+                background-color: #0f381d;
+                display: flex;
+                gap: 1rem;
+                color:white;
+                text-decoration: none;
+                border-radius: 0.5rem;
+                height: 8rem;
+
+                img {
+                    height: 100%;
+                    border-radius: 0.4rem;
+                }
+
+                .textcontent {
+                    flex-direction: column;
+                    display: flex;
+                    gap: 0.5rem;
+                }
+
+                .title {
+                    font-weight: 700;
+                    font-size: large;
+                }
+
+                .author {
+                    font-size: medium;
+                    color: #aaa
+                }
+            }
+
+        }
+    }
+</style>
