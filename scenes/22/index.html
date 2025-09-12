@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Just a Real Nice Pond</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="overlay" id="overlay">
+      <div class="overlay-text">Tap...</div>
+      <div class="overlay-left"></div>
+      <div class="overlay-right"></div>
+    </div>
+
+    <div class="hero">
+      <i
+        class="fa-solid fa-chevron-down arrow chevron-down"
+        id="scroll-down"
+      ></i>
+      <!-- Fireflies -->
+      <div
+        class="firefly"
+        style="top: 30%; left: 20%; animation-delay: 0s"
+      ></div>
+      <div
+        class="firefly"
+        style="top: 60%; left: 40%; animation-delay: 5s"
+      ></div>
+      <div
+        class="firefly"
+        style="top: 10%; left: 70%; animation-delay: 10s"
+      ></div>
+      <!-- Leaves -->
+      <div class="leaf" style="left: 10%; animation-delay: 2s"></div>
+      <div class="leaf" style="left: 50%; animation-delay: 6s"></div>
+      <div class="leaf" style="left: 80%; animation-delay: 4s"></div>
+      <h1>Just a Real Nice Pond</h1>
+    </div>
+
+    <div class="content" id="content">
+      <h1>Just a Real Nice Pond</h1>
+      <p>
+        It's got a view of the mountain and everything… wow. There couldn't
+        possibly be anything nefarious about it! The locals assure travelers
+        that the pond is just fine. Absolutely nothing suspicious at all. Sure,
+        sometimes the ripples spell out words like “RUN”… and sometimes the
+        ducks quack in morse code… but other than that, it’s definitely cozy and
+        safe.
+      </p>
+      <!-- Grouped arrows just below the content -->
+      <div class="arrow-group">
+        <h2 class="arrow-group-title">Explore Further</h2>
+        <p class="arrow-group-desc">
+          You see 3 paths leading away from the pond. Would you dare to follow
+          one?
+        </p>
+        <div class="arrow-group-arrows">
+          <span class="fa-solid fa-arrow-left arrow arrow-left" tabindex="0">
+            <span class="arrow-info">Splorgon 5</span>
+            <a href="/scenes/1/">Splorgon 5</a>
+          </span>
+          <span class="fa-solid fa-arrow-down arrow arrow-down" tabindex="0">
+            <span class="arrow-info">Pointy Dunes</span>
+            <a href="/scenes/87/">Pointy Dunes</a>
+          </span>
+          <span class="fa-solid fa-arrow-right arrow arrow-right" tabindex="0">
+            <span class="arrow-info">Eastern Upside-Down Island</span>
+            <a href="/scenes/37/">Eastern Upside-Down Island</a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 | Made by
+      <a href="https://github.com/Irtaza2009" target="_blank">Irtaza</a>
+      for
+      <a href="https://summer.hackclub.com/s" target="_blank"
+        >Summer of Making Grand Survey Expedition</a
+      >
+    </footer>
+
+    <audio autoplay loop>
+      <source
+        src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/544afb22399436095b58313fb6c01b2c8ff3b85a_midsummer-garden-201625_audio.mp4"
+        type="audio/mp4"
+      />
+      Your browser does not support the audio element.
+    </audio>
+  </body>
+  <script src="script.js"></script>
+</html>

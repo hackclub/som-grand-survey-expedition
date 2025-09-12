@@ -1,0 +1,501 @@
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    html,
+    body {
+    height: 100%;
+    width: 100%;
+    font-family: "Pixelify Sans", sans-serif;
+    background: #c6716a;
+    color: #edc77d;
+    scrollbar-width: none;
+    }
+    body::-webkit-scrollbar,
+    html::-webkit-scrollbar {
+    display: none;
+    }
+
+    /* Hero Section */
+    .hero {
+    height: 100vh;
+    width: 100vw;
+    background: url("https://hc-cdn.hel1.your-objectstorage.com/s/v3/ba0c1aed3d1a0388167aacf47d71d213afc46ed7_real-nice-pond__1_.png")
+        no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .arrow {
+    position: absolute;
+    font-size: 2.5rem;
+    color: #edc77d;
+    cursor: pointer;
+    z-index: 10;
+    background: none;
+    border: none;
+    outline: none;
+    transition: color 0.2s;
+    }
+    .arrow a {
+    display: none;
+    }
+
+    /* Info popup styles */
+    .arrow-info {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ea906d;
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border-radius: 14px;
+    font-size: 1rem;
+    white-space: nowrap;
+    box-shadow: 0 4px 24px 0 #c6716a;
+    border: 2px solid #edc77d;
+    pointer-events: none;
+    opacity: 0.95;
+    font-family: "Patrick Hand", cursive;
+    transition: opacity 0.2s;
+    }
+
+    /* Place arrows as a group at the bottom center of the content section */
+    .arrow-group {
+    .arrow-group {
+        position: relative;
+        margin-top: 2.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        z-index: 20;
+        width: 100%;
+        max-width: 720px;
+        padding: 1.5rem;
+        border: 3px solid #edc77d;
+        border-radius: 18px;
+        background: rgba(67, 77, 78, 0.4);
+        box-shadow: 0 0 18px rgba(237, 199, 125, 0.6);
+    }
+    }
+    .arrow-group .arrow {
+    position: static; /* Remove absolute for grouped arrows */
+    font-size: 2.5rem;
+    margin: 0;
+    }
+
+    /* Adjust info popup positions for grouped arrows */
+    .arrow-group .arrow-left .arrow-info {
+    left: auto;
+    right: 110%;
+    bottom: 50%;
+    transform: translateY(50%);
+    }
+    .arrow-group .arrow-right .arrow-info {
+    left: 110%;
+    right: auto;
+    bottom: 50%;
+    transform: translateY(50%);
+    }
+    .arrow-group .arrow-down .arrow-info {
+    left: 50%;
+    bottom: 110%;
+    transform: translateX(-50%);
+    }
+
+    .chevron-down {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+    /* Show popup on hover */
+    .arrow:hover .arrow-info,
+    .arrow:focus .arrow-info {
+    display: block;
+    }
+
+    .chevron-down {
+    animation: bounce 1.2s infinite;
+    }
+    @keyframes bounce {
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(12px);
+    }
+    }
+
+    .hero h1 {
+    color: #434d4e;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px #5b644b, 0 0 12px #e48e73;
+    background: #434d4e;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    }
+
+    .hero.scrolled h1 {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 24px #c890a4, 0 0 12px #b1777c;
+    }
+
+    /* Content Section */
+    .content {
+    min-height: 100vh;
+    padding: 3rem 1rem 4rem 1rem;
+    background: #c6716a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    }
+    /* Place arrows as a group at the bottom center of the content section */
+    .arrow-group {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 36px; /* space between arrows */
+    z-index: 20;
+    }
+    .arrow-group .arrow {
+    position: static; /* Remove absolute for grouped arrows */
+    font-size: 2.5rem;
+    margin: 0;
+    }
+
+    /* Adjust info popup positions for grouped arrows */
+    .arrow-group .arrow-left .arrow-info {
+    left: auto;
+    right: 110%;
+    bottom: 50%;
+    transform: translateY(50%);
+    }
+    .arrow-group .arrow-right .arrow-info {
+    left: 110%;
+    right: auto;
+    bottom: 50%;
+    transform: translateY(50%);
+    }
+    .arrow-group .arrow-down .arrow-info {
+    left: 50%;
+    bottom: 110%;
+    transform: translateX(-50%);
+    }
+
+    .content h1 {
+    color: #434d4e;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px #5b644b, 0 0 12px #e48e73;
+    background: #434d4e;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    }
+    .content p {
+    max-width: 700px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #edc77d;
+    padding: 1.5rem 2rem;
+    border-radius: 18px;
+    border: 2px solid #edc77d;
+    margin-bottom: 2.5rem;
+    transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+    }
+
+    /* On scroll, brighten and glow text */
+    .content.scrolled h1 {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 24px #c890a4, 0 0 12px #b1777c;
+    }
+
+    /* Footer */
+    footer {
+    background: #c6716a;
+    color: #edc77d;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: "Patrick Hand", cursive;
+    }
+
+    footer a {
+    color: #f3df6a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    footer a:hover {
+    color: #fff176;
+    text-shadow: 0 0 4px #f3df6a, 0 0 6px #edc77d;
+    }
+
+    /* Fireflies */
+    .firefly {
+    position: absolute;
+    background: #f3df6a;
+    border-radius: 50%;
+    opacity: 0.8;
+    width: 6px;
+    height: 6px;
+    animation: drift 15s infinite;
+    }
+
+    @keyframes drift {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(100px, 200px);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-100px, 400px);
+        opacity: 0.6;
+    }
+    }
+
+    /* Falling Leaves */
+    .leaf {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #434d4e;
+    border-radius: 50% 50% 50% 0;
+    opacity: 0.7;
+    animation: fall 12s linear infinite;
+    }
+    @keyframes fall {
+    0% {
+        transform: translateY(-10%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+    .content h1 {
+        font-size: 1.5rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .content p {
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+    }
+
+    .arrow-group {
+    position: relative;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    z-index: 20;
+    width: 100%;
+    }
+    .arrow-group-arrows {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    width: 100%;
+    }
+    .arrow-group .arrow {
+    position: static;
+    font-size: 2.5rem;
+    margin: 0 8px;
+    }
+    .arrow-group {
+    flex-direction: column;
+    gap: 0.2rem;
+    }
+    .arrow-group-arrows {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin-top: 0.5rem;
+    }
+
+    /* Add gap between content and arrow group */
+    .arrow-group {
+    position: relative;
+    margin-top: 2.2rem; /* increased gap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    z-index: 20;
+    width: 100%;
+    }
+
+    /* Ensure arrow group arrows are in a row and centered */
+    .arrow-group-arrows {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    width: 100%;
+    }
+
+    /* Fix arrow-info popup for grouped arrows */
+    .arrow-group-arrows .arrow {
+    position: relative;
+    font-size: 2.5rem;
+    margin: 0 8px;
+    cursor: pointer;
+    }
+
+    .arrow-group-arrows .arrow .arrow-info {
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: 110%;
+    transform: translateX(-50%);
+    background: #ea906d;
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border-radius: 14px;
+    font-size: 1rem;
+    white-space: nowrap;
+    box-shadow: 0 4px 24px 0 #c6716a;
+    border: 2px solid #edc77d;
+    pointer-events: none;
+    opacity: 0.95;
+    font-family: "Patrick Hand", cursive;
+    transition: opacity 0.2s;
+    z-index: 100;
+    }
+
+    /* Position popups for left and right arrows */
+    .arrow-group-arrows .arrow-left .arrow-info {
+    left: auto;
+    right: 110%;
+    bottom: 50%;
+    transform: translateY(50%);
+    }
+    .arrow-group-arrows .arrow-right .arrow-info {
+    left: 110%;
+    right: auto;
+    bottom: 50%;
+    transform: translateY(50%);
+    }
+    .arrow-group-arrows .arrow-down .arrow-info {
+    left: 50%;
+    bottom: 110%;
+    transform: translateX(-50%);
+    }
+
+    /* Show popup on hover/focus */
+    .arrow-group-arrows .arrow:hover .arrow-info,
+    .arrow-group-arrows .arrow:focus .arrow-info {
+    display: block;
+    }
+
+    /* Overlay Styles */
+    .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Pixelify Sans", sans-serif;
+    color: #edc77d;
+    font-size: 3rem;
+    cursor: pointer;
+    overflow: hidden;
+    }
+
+    .overlay-text {
+    color: #434d4e;
+    z-index: 10000;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px #5b644b, 0 0 12px #e48e73;
+    background: #434d4e;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: bounceTap 1.8s infinite;
+    }
+
+    @keyframes bounceTap {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    }
+
+    .overlay-left,
+    .overlay-right {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: #c6716a;
+    z-index: 9998;
+    transition: transform 1.5s ease-in-out;
+    }
+
+    .overlay-left {
+    left: 0;
+    }
+
+    .overlay-right {
+    right: 0;
+    }
+
+    /* Curtain open animation */
+    .overlay.open .overlay-left {
+    transform: translateX(-100%);
+    }
+
+    .overlay.open .overlay-right {
+    transform: translateX(100%);
+    }
+
+    .overlay.open .overlay-text {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    }
