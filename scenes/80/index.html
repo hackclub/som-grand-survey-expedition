@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Scene 80 - The Parting of the Mountain Waters</title>
+    <link rel="stylesheet" href="/styles.css">
+    </link>
+    <style>
+        #one {
+            background-color: rgb(239, 236, 229);
+            overflow: auto;
+            text-align: right;
+            padding: 3;
+        }
+
+        #two {
+            background-color: rgb(239, 236, 229);
+            overflow: auto;
+            padding: 3;
+        }
+
+        #center {
+            margin: auto, 0, auto, 0;
+            background: rgb(239, 236, 229);
+            /* background-color: rgb(78, 205, 196); */
+
+        }
+
+        #wrapper {
+            display: grid;
+            grid-template-columns: 49% 1fr 49%;
+            height: 100%;
+        }
+
+        #btn-nxt {
+            padding: 0;
+            margin: 0;
+            height: 2%;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            color: black;
+        }
+
+        svg {
+            width: 100%;
+            height: 94%;
+            padding: 0;
+            margin: 0;
+        }
+
+        #wrapper .screen {
+            display: none;
+            height: 100%;
+        }
+
+        .screen-0#wrapper .screen-0 {
+            display: block;
+        }
+
+        .screen-1#wrapper .screen-1 {
+            display: block;
+        }
+
+        .screen-2#wrapper .screen-2 {
+            display: block;
+        }
+
+        .screen-3#wrapper .screen-3 {
+            display: block;
+        }
+
+        .screen-100#wrapper .screen-100 {
+            display: block;
+        }
+
+        .screen-101#wrapper .screen-101 {
+            background-color: #999999;
+            display: block;
+        }
+
+        .screen-102#wrapper .screen-102 {
+            background-color: #999999;
+            display: block;
+        }
+
+        .screen-789#wrapper .screen-789 {
+            display: block;
+        }
+
+        .border {
+
+            border-color: #770000;
+            border-width: 10px;
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="one">
+            <div class="screen-0 screen">
+                <h1>Welcome to The Parting</h1>
+                Legend says that in the ancient times<br>
+                Inspired by ENIAC, a genius professor<br>
+                With an infinite SSD, infinite DDR4, and<br>
+                With this power, he created much, but,<br>
+                And, a black-hat hacker pushed it out<br><br>
+                It floated down the currents. All the way<br>
+                It came floating onward. And destoryed land, making a river.<br>
+                Some say that it's ruins lie still,<br>
+                But none know if it is true.<br>
+                Maybe, just maybe someday, someone,<br>
+                <h2>Will you be</h2>
+            </div>
+            <div class="screen-1 screen">
+                <h2>You found</h2><br>
+                You are now deep within<br>
+                You see light.<br>
+                Will you continue toward the small red light.<br>
+            </div>
+            <div class="screen-2 screen">
+                <h2>You are very</h2><br>
+                But now, you <br>
+                The LED has a cable,<br>
+                Do you follow the river?<br>
+            </div>
+            <div class="screen-3 screen">
+                <h2>Welcome to</h2>
+                Go
+            </div>
+            <div class="screen-100 screen">
+                <h2>Bam! The lights go out!</h2>
+                It's hard to see in the dark, because all the light from outside is GONE!<br>
+                You need a light.<br>
+                Do you go <button id="btn-left">left</button>, <button id="btn-right">right</button>
+            </div>
+            <div class="screen-101 screen">
+                <h2>Another LED!</h2>
+                You are almost blinded<br>
+                You took the right choise.<br>
+                And suddenly, a thought comes into your mind.<br>
+                You contine
+            </div>
+            <div class="screen-102 screen">
+                <h2>A dead end.</h2>
+                The river Glub is right here, <br>
+                And, there is wheel running through the waters,<br>
+                Appearing as a large metal box, <br>
+                You have found<br>
+                The only way out is <br>
+                You probably won't be able to come back here.<br>
+            </div>
+
+            <div class="screen-789 screen">
+                <h2>You are lost</h2>
+            </div>
+        </div>
+        <div id="center">
+            <svg id="river" viewBox="0 0 100 100" preserveAspectRatio="none" role="img">
+                <path fill="rgb(78, 205, 196)" stroke-width="0" d="M 30,0
+                       c 30,5,30,15,0,20 
+                       c -30,5,-30,15,0,20
+                       c 30,5,30,15,0,20 
+                       c -30,5,-30,15,0,20
+                       c 30,5,30,15,0,20 
+                       c -30,5,-30,15,0,20
+                       h 40
+                       c -30,-5,-30,-15,0,-20
+                       c 30,-5,30,-15,0,-20 
+                       c -30,-5,-30,-15,0,-20
+                       c 30,-5,30,-15,0,-20 
+                       c -30,-5,-30,-15,0,-20
+                       c 30,-5,30,-15,0,-20 
+                       h -40
+                       " />
+            </svg>
+            <footer><button title="Follow the river downstream!" id="btn-next">↓↓↓</button></footer>
+
+        </div>
+        <div id="two">
+            <div class="screen-0 hide screen">
+                <h1>of the Mountain Waters</h1>
+                (of 2017)<br>
+                invented the infinite computer.<br>
+                most importantly, an infinite cpu.<br>
+                with power, comes jealousy.<br>
+                to sea.<br><br>
+                to Hacklantis island.<br>
+                (it's a very big computer.)<br>
+                within the moutains.<br><br>
+                will find it's ruins.<br>
+                <h2>that person?</h2>
+            </div>
+            <div class="screen-1 hide screen">
+                <h2>Nothing.</h2><br>
+                the moutain caves.<br>
+                What is it?<br>
+                Or <button id="scr-0">turn back?</button><br>
+            </div>
+            <div class="screen-2 hide screen">
+                <h2>Brave.</h2><br>
+                face a choise.<br>
+                but the river leads elsewhere.<br>
+                Or do you <button id="scr-100">follow the cable?</button><br>
+            </div>
+
+            <div class="screen-3 screen">
+                <h2>The River Glub</h2>
+                <a href="/scenes/72">here.</a>
+            </div>
+
+            <div class="screen-100 screen">
+                <h2>A huge rock has fallen across the entrance.</h2>
+                And, you face an even worse problem, you can't see which way cable leads.<br>
+                Where can you get one?<br>
+                Or <button id="btn-on">straight on?</button>
+            </div>
+            <div class="screen-101 screen">
+                <h2>And a bright one at that.</h2>
+                by the bright light, now iluminating the cavern.<br>
+                You see that the cable leads on through the cavern.<br>
+                How is this machine getting power.<br>
+                <button id="btn-continue">on</button>.
+            </div>
+            <div class="screen-102 screen">
+                <h2>But what's that?</h2>
+                running fast.<br>
+                almost like a power generator.<br>
+                it makes a lound glubbing noise.<br>
+                the computer.<br>
+                <button id="gohome">through</button> the river.<br>
+                The current is too strong.
+            </div>
+
+            <div class="screen-789 screen">
+                <h2>in the mountains.</h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        let screen = 0;
+        reScreen();
+        document.getElementById("btn-next").addEventListener("click", (e) => {
+            screen++;
+            reScreen();
+        });
+        document.getElementById("scr-0").addEventListener("click", (e) => {
+            screen = 0;
+            reScreen();
+        });
+        document.getElementById("scr-100").addEventListener("click", (e) => {
+            screen = 100;
+            reScreen();
+        });
+        document.getElementById("btn-left").addEventListener("click", (e) => {
+            screen = 789;
+            reScreen();
+        });
+        document.getElementById("btn-right").addEventListener("click", (e) => {
+            screen = 789;
+            reScreen();
+        });
+        document.getElementById("btn-continue").addEventListener("click", (e) => {
+            screen = 102;
+            reScreen();
+        });
+        document.getElementById("btn-on").addEventListener("click", (e) => {
+            screen = 101;
+            reScreen();
+        });
+        document.getElementById("gohome").addEventListener("click", (e) => {
+            screen = 3;
+            reScreen();
+        });
+        function reScreen() {
+            document.getElementById('wrapper').className = 'screen-' + screen;
+            if (screen == 3) {
+                document.getElementById("btn-next").remove();
+                document.getElementById("river").style.display = "block";
+                document.getElementById("center").style.backgroundColor = "rgb(239, 236, 229)";
+                document.getElementById("two").style.backgroundColor = "rgb(239, 236, 229)";
+                document.getElementById("one").style.backgroundColor = "rgb(239, 236, 229)";
+                document.getElementById("wrapper").classList.remove(["border"]);
+
+            }
+            if (screen == 100) {
+                document.getElementById("river").style.display = "none";
+                document.getElementById("btn-next").style.display = "none";
+                document.getElementById("center").style.backgroundColor = "#333333";
+                document.getElementById("two").style.backgroundColor = "#333333";
+                document.getElementById("one").style.backgroundColor = "#333333";
+            }
+            if (screen == 101) {
+                document.getElementById("center").style.backgroundColor = "#999999";
+                document.getElementById("two").style.backgroundColor = "#999999";
+                document.getElementById("one").style.backgroundColor = "#999999";
+                document.getElementById("wrapper").classList.add(["border"]);
+            }
+        }
+    </script>
+</body>
+
+</html>
