@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Trees, Please — Demo</title>
+    <link rel="stylesheet" href="game.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Trees, Please</h1>
+        <p class="subtitle">Swipe right for real trees, left for fakes.</p>
+    </header>
+
+    <main id="game">
+        <section id="score">Tree <span id="round">1</span>/5 — Score: <span id="scoreVal">0</span></section>
+
+        <div class="card-container">
+            <div id="treeCard" class="card">
+                <div class="card-content">
+                    <h2 id="treeName">Tree #1</h2>
+                    <ul id="attributes"></ul>
+                </div>
+                <div class="card-overlay"></div>
+            </div>
+            <div class="swipe-actions">
+                <div class="deny-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+                <div class="approve-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div id="controls" class="hidden">
+            <button id="approve">Real</button>
+            <button id="deny">Fake</button>
+        </div>
+
+        <div id="feedback" aria-live="polite"></div>
+    </main>
+
+    <footer>
+        <a class="btn primary" href="https://isle.a.hackclub.dev/scenes/55">Exit the game</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

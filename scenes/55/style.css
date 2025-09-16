@@ -1,0 +1,70 @@
+body {
+  font-family: "Inter";
+  background: linear-gradient(#021a13 0%, #1f4529 100%);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div {
+  max-width: 900px;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 5rem;
+}
+
+p {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 150px;
+  max-width: 150px;
+  min-height: 50px;
+  max-height: 50px;
+  padding: 0.8rem 1.7rem;
+  border: none;
+  background: #3a552f;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.18s, background 0.18s;
+  white-space: normal;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  background: #4f7740;
+}
+
+.visit-line {
+  font-size: 1.5rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+.visit {
+  display: flex;
+
+  gap: 0.75rem;
+  align-items: center;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}

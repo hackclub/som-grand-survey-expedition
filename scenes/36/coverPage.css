@@ -1,0 +1,49 @@
+body {
+  background-image: url('Images/firstPage.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 200vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-btn {
+  transform: translateX(-40%);
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin-left: 140px;
+  font-size: 36px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.play-btn:hover {
+  background-color: #148b2d;
+}
+
+.play-btn:active {
+  background-color: #59f002;
+}
+
+svg {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+text {
+  font-size: 99px;
+  font-weight: bolder;
+  fill: navy;
+}

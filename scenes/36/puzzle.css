@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  /* Ensures the body takes up the full viewport height */
+  background-image: url('Images/WideShipCabin.png');
+  background-size: cover;
+  /* cover entire screen */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* fixed when scrolling */
+  background-position: center, center;
+}
+
+#grid-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.grid-item.correct {
+  background-color: rgb(161, 221, 161);
+  border-color: green;
+}
+
+.grid-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: large;
+  color: rgb(69, 69, 69);
+  width: 125px;
+  height: 125px;
+  background-color: rgba(161, 233, 249, 0.4);
+  border: 6px solid rgb(80, 62, 59);
+  border-radius: 9px;
+}
+
+.left-container,
+.right-container {
+  margin-left: 30px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+  width: 150px;
+  border: 2.5px solid rgb(127, 105, 91);
+  position: relative;
+  z-index: 1;
+}
+
+#draggableImage {
+  position: absolute;
+  width: 100px;
+  max-height: 100px;
+  cursor: grabbing;
+}
+
+.Home,
+.Again {
+  padding: 10px 20px;
+  bottom: 9px;
+  font-size: larger;
+  color: rgb(79, 33, 33);
+  font-weight: bold;
+  background-color: #31c34e;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: none;
+}
+
+.Home:active,
+.Again:active {
+  background-color: #04f420;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.center-container {
+  margin-top: 100px;
+  position: relative;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 0, 0.4);
+  pointer-events: none;
+  animation: flashRed 0.9s ease forwards;
+  z-index: 9999;
+}
+
+@keyframes flashRed {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+#game-container {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#water {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index: 0;
+  background: rgba(126, 126, 236, 0.565);
+  transition: height 0.9s ease;
+}
+
+.puzzle-piece {
+  border: 1px solid black;
+}
+
+.solved-state .puzzle-piece {
+  border: none;
+  background-color: #f0f0f0;
+}
+
+.solved-state {
+  position: relative;
+  background-image: url('Images/Paper4.png');
+  background-size: cover;
+  background-position: center;
+  border: 2px solid rgb(67, 173, 67);
+  box-shadow: 0 0 20px rgb(245, 4, 4);
+  transition: all 1s ease-in-out;
+  /* Smooth transition for the border and shadow only*/
+}
+
+.completion-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 90%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+
+  text-align: center;
+  color: rgb(240, 18, 18);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  animation: fadeInText 1.5s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+.completion-text .headline {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.completion-text .subline {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: black;
+}
+
+.link-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.reward-link {
+  font-size: 20px;
+  color: rgb(4, 203, 247);
+  text-decoration: none;
+  animation: fadeInText 1.5s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+.reward-link:hover {
+  text-decoration: underline;
+}
