@@ -1,0 +1,100 @@
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.lizard {
+  position: absolute;
+  top: 70px;
+  left: 34px;
+}
+.rock {
+  position: absolute;
+  top: 400px;
+  left: 900px;
+  width: 200px;
+  height: 200px;
+}
+
+.rock1 {
+  position: absolute;
+  top: 200px;
+  left: 800px;
+  width: 200px;
+  height: 200px;
+}
+.randomRock{
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  top: auto;
+  left: auto;
+}
+
+.background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+object-fit: cover;
+
+}
+.speech{
+  position: absolute;
+  top: 60px;
+  left: 5px;
+}
+
+.rock2 {
+  position: absolute;
+  top: 300px;
+  left: 600px;
+  width: 200px;
+  height: 200px;
+}
+
+.building{
+  position: absolute;
+  top: 50px;
+  left: 400px;
+  width: 25%;
+  transform: rotate(-27deg);
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

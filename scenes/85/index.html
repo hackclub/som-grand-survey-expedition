@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js"></script>
+    <body onLoad="Init()">
+    <body onLoad="move()">
+
+</head>
+  <body>
+    <!-- Images -->
+  <img class="background" id="background" src="./assets/v2osk-PaNxe-QJwhE-unsplash.jpg" />
+  <img class="lizard" src="./assets/praskabasil.png" />
+  <img class="rock" src="./assets/rock.png" onclick="playAudio('./assets/5eec9fd189fe212f1d0f4660d6bfb46e.wav');remove(this)"/>
+  <img class="rock1" src="./assets/rock1.png" onclick="playAudio('./assets/5eec9fd189fe212f1d0f4660d6bfb46e.wav');remove(this)"/>
+  <img class="rock2" src="./assets/rock.png" onclick="playAudio('./assets/5eec9fd189fe212f1d0f4660d6bfb46e.wav');remove(this)"/>
+  <img class="randomRock" id="randomRock" src="./assets/rock2.png" onclick="playAudio('./assets/5eec9fd189fe212f1d0f4660d6bfb46e.wav');remove(this)" onload="randomPlace()"/>
+  <img class="building" src="./assets/DSC_0579-removebg-preview (1).png">
+  <script>
+    function randomPlace(){
+      randomRock = document.getElementById("randomRock");
+      spaceW = screen.height - randomRock.height;
+      spaceH = screen.width - randomRock.width;
+      document.getElementById("randomRock").style.top = Math.floor(Math.random() * spaceH) + "px";
+      document.getElementById("randomRock").style.left = Math.floor(Math.random() * spaceW) + "px";
+    }
+  </script>
+  <img class="speech" id="speech" src="./assets/speechBubble.svg" />
+
+  <div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+  <p>Wow!, you were a great help to the praksadonskalisks! Here are some places you can visit next!</p>
+    <a href="/scenes/44/">Trollcave</a>
+  </div>
+
+</div>
+  </body>
+
+
+</html>
