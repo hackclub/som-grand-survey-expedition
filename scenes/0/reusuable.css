@@ -1,0 +1,65 @@
+body {
+    font-family: 'TASA Orbiter', sans-serif;
+    margin: 0;
+    padding: 64px 32px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin: 0.2em 0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0.75em 0;
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin: 0.45em 0;
+}
+
+p {
+    margin: 0.4em 0;
+}
+
+button {
+    cursor: pointer;
+    font-family: 'TASA Orbiter', sans-serif;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.small-text {
+    font-size: 0.7em;
+}
+
+.emojid-text {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+}
+
+.custom-emoji {
+    height: 1em;
+    width: auto;
+}
+
+.big-custom-emoji {
+    height: 2em;
+    width: auto;
+}
+
+.striped-background {
+    background: repeating-linear-gradient(
+        45deg,
+        #8cb18f,
+        #8cb18f 10px,
+        #92b895 10px,
+        #92b895 20px
+    );
+}

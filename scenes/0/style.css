@@ -1,0 +1,73 @@
+body {
+    background: linear-gradient(to bottom, #6b8f6d, #98BD9B 300px);
+}
+
+.layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.introduction-div {
+    text-align: center;
+    margin: 0 24px;
+}
+
+.reviews-div {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.review-div {
+    background-color: #8cb18f;
+    border-radius: 12px;
+    padding: 24px 16px;
+    transition: all 150ms ease;
+}
+
+.review-div:hover {
+    transform: scale(1.025) rotate(0.5deg);
+}
+
+.blubberhill-facilities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.blubberhill-facilities-list > div {
+    display: flex;
+    flex-direction: row;
+    border-radius: 12px;
+    align-items: stretch;
+    gap: 24px;
+    padding: 16px 0;
+}
+
+.blubberhill-facilities-list > div > .svg-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 64px;
+    background: rgba(0, 0, 0, 0.05);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    margin: -16px 0;
+}
+
+.blubberhill-facilities-list > div > button {
+    background: rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    margin-top: auto;
+    margin-left: auto;
+    padding: 4px 16px;
+    margin-right: 16px;
+    border-radius: 12px;
+}
+
+.blubberhill-facilities-list svg {
+    width: 48px;
+    height: 48px;
+}
