@@ -35,7 +35,7 @@ function checkWin() {
         const mainContainer = document.getElementById('grid-container');
 
         mainContainer.classList.add('solved-state');
-        mainContainer.style.position = "relative"; // ✅ ensure text can center inside
+        mainContainer.style.position = "relative"; // ensure text can center inside
 
         gridItems.forEach(box => {
             box.style.opacity = '0';
@@ -84,6 +84,8 @@ function checkWin() {
 
         const link2 = document.createElement('a');
         link2.href = "https://summer.hackclub.com/s?scene=53";
+        link2.target = "_blank";  // open in new tab
+        link2.rel = "noopener noreferrer";
         link2.textContent = "Imaginary Sandcastel";
         link2.className = "reward-link";
 
