@@ -1,54 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grand Survey Expedition - Map Viewer</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js">
-    </script>
-    <link rel="preload" as="image" href="/map.png">
-</head>
-<body>
-    <div id="app">
-        <div id="hover-display" class="hover-display"></div>
-        <div id="map-container">
-            <img id="map-image" src="map.png" alt="Map">
-            <svg id="overlay-svg"></svg>
-        </div>
-        <div id="controls">
-            <button id="load-manifest-btn">Load from Manifest</button>
-            <button id="save-btn">Save to Clipboard (Cmd+C)</button>
-            <button id="save-manifest-btn">Save Manifest</button>
-            <div class="settings">
-                <div class="setting-item">
-                    <label>
-                        <input type="checkbox" id="regenerate-connections">
-                        Regenerate connections
-                    </label>
-                </div>
-                <div class="setting-item">
-                    <label>
-                        <input type="checkbox" id="show-voronoi">
-                        Show Voronoi cells
-                    </label>
-                </div>
-                <div class="setting-item">
-                    <label>
-                        Node name:
-                        <input type="text" id="node-name-input" placeholder="Enter node name">
-                    </label>
-                </div>
-                <div class="setting-item">
-                    <label>
-                        Description:
-                        <input type="text" id="node-description-input" placeholder="Enter description">
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Shy Bridge</title>
+		
+		<link href="./_app/immutable/assets/0.KkkYTiBr.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/2.DVzKJsHJ.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.Bv3-TjtH.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/XSE4jsux.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CKYrXDX6.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/QtDRwltR.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.ZNY2Goh4.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/73ZJCj7q.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/DsnmJJEf.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.CIuOuaRZ.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BIsoZTE3.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.oEKjQ5OH.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/D1Yb7Av-.js"><!--[--><link rel="icon" href="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='107'%20height='128'%20viewBox='0%200%20107%20128'%3e%3ctitle%3esvelte-logo%3c/title%3e%3cpath%20d='M94.157%2022.819c-10.4-14.885-30.94-19.297-45.792-9.835L22.282%2029.608A29.92%2029.92%200%200%200%208.764%2049.65a31.5%2031.5%200%200%200%203.108%2020.231%2030%2030%200%200%200-4.477%2011.183%2031.9%2031.9%200%200%200%205.448%2024.116c10.402%2014.887%2030.942%2019.297%2045.791%209.835l26.083-16.624A29.92%2029.92%200%200%200%2098.235%2078.35a31.53%2031.53%200%200%200-3.105-20.232%2030%2030%200%200%200%204.474-11.182%2031.88%2031.88%200%200%200-5.447-24.116'%20style='fill:%23ff3e00'/%3e%3cpath%20d='M45.817%20106.582a20.72%2020.72%200%200%201-22.237-8.243%2019.17%2019.17%200%200%201-3.277-14.503%2018%2018%200%200%201%20.624-2.435l.49-1.498%201.337.981a33.6%2033.6%200%200%200%2010.203%205.098l.97.294-.09.968a5.85%205.85%200%200%200%201.052%203.878%206.24%206.24%200%200%200%206.695%202.485%205.8%205.8%200%200%200%201.603-.704L69.27%2076.28a5.43%205.43%200%200%200%202.45-3.631%205.8%205.8%200%200%200-.987-4.371%206.24%206.24%200%200%200-6.698-2.487%205.7%205.7%200%200%200-1.6.704l-9.953%206.345a19%2019%200%200%201-5.296%202.326%2020.72%2020.72%200%200%201-22.237-8.243%2019.17%2019.17%200%200%201-3.277-14.502%2017.99%2017.99%200%200%201%208.13-12.052l26.081-16.623a19%2019%200%200%201%205.3-2.329%2020.72%2020.72%200%200%201%2022.237%208.243%2019.17%2019.17%200%200%201%203.277%2014.503%2018%2018%200%200%201-.624%202.435l-.49%201.498-1.337-.98a33.6%2033.6%200%200%200-10.203-5.1l-.97-.294.09-.968a5.86%205.86%200%200%200-1.052-3.878%206.24%206.24%200%200%200-6.696-2.485%205.8%205.8%200%200%200-1.602.704L37.73%2051.72a5.42%205.42%200%200%200-2.449%203.63%205.79%205.79%200%200%200%20.986%204.372%206.24%206.24%200%200%200%206.698%202.486%205.8%205.8%200%200%200%201.602-.704l9.952-6.342a19%2019%200%200%201%205.295-2.328%2020.72%2020.72%200%200%201%2022.237%208.242%2019.17%2019.17%200%200%201%203.277%2014.503%2018%2018%200%200%201-8.13%2012.053l-26.081%2016.622a19%2019%200%200%201-5.3%202.328'%20style='fill:%23fff'/%3e%3c/svg%3e"/><!--]-->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><!----><div class="@container my-2 flex min-h-screen min-w-full flex-col overflow-x-hidden text-center"><noscript class="svelte-k5ksu5"><!----><h1 class="text-4xl md:text-5xl"><span class="hover:opacity-5">Shy Bridge</span></h1><!----></noscript> <!----><!--[!--><!--[--><!--[!--><!--]--><!--]--><!--]--><!----><!----> <div class="@container/shy-bridge flex min-w-full flex-row svelte-1uha8ag" id="shy-bridge" role="region"><button id="arrow-left" aria-label="Go to scene 99" title="Go to scene 99" class="rounded-xl bg-yellow-500 px-5 py-10 hover:scale-[1.03] hover:bg-yellow-600 hover:shadow-2xl svelte-1uha8ag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-arrow-left"><!--[--><!----><path d="m12 19-7-7 7-7"><!----></path><!----><!----><path d="M19 12H5"><!----></path><!----><!--]--><!----><!----></svg><!----></button> <img alt="Shy Bridge" class="mx-auto max-h-1/3 w-1/2 svelte-1uha8ag" id="shy-bridge-half-1" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/312e0d109e3add09d33c1c8a02ba09f9b2199b9f_bridge-half-1.webp"/> <h2 class="text-4xl text-red-400 svelte-1uha8ag" id="shy-text">I'm too shy sorry ~ :(</h2> <img id="censored" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/f6d114a23705809cd1131d648c00f3c27a1a4f4c_censored.webp" alt="censored" title="I'm too shy to be in front of you!" class="mx-auto my-8 max-h-1/2 w-1/2 svelte-1uha8ag" style="opacity: 0;"/> <img alt="Shy Bridge" class="mx-auto max-h-1/3 w-1/2 svelte-1uha8ag" id="shy-bridge-half-2" src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/670c55b8629048b9b78f276bc3252b996915bdc4_bridge-half-2.webp"/> <button id="arrow-right" aria-label="Go to scene 92" title="Go to scene 92" class="rounded-xl bg-amber-500 px-5 py-10 hover:scale-[1.03] hover:bg-amber-600 hover:shadow-2xl svelte-1uha8ag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-arrow-right"><!--[--><!----><path d="M5 12h14"><!----></path><!----><!----><path d="m12 5 7 7-7 7"><!----></path><!----><!--]--><!----><!----></svg><!----></button></div> <div id="arrow-down" class="flex min-w-full items-center justify-center text-center"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-icon lucide lucide-arrow-down animate-bounce"><!--[--><!----><path d="M12 5v14"><!----></path><!----><!----><path d="m19 12-7 7-7-7"><!----></path><!----><!--]--><!----><!----></svg><!----></div> <section id="lore" class="svelte-1uha8ag"><h1 class="text-4xl md:text-5xl">Read the Lore!</h1> <noscript class="svelte-k5ksu5"><!----><p class="m-2 text-2xl md:text-3xl">A bridge that is too shy to show itself.</p> <p class="m-2 text-2xl md:text-3xl">Unfortunately it doesn't have much self-confidence</p> <p class="m-2 text-2xl md:text-3xl">It actually used to be most confident bridge in the world - always staying available, night
+				or day, rain or sun.</p> <p class="m-2 text-2xl md:text-3xl">But one day, it rained a lot, the river flooded, and the bridge couldn't open, it was stuck
+				from not moving.</p> <p class="m-2 text-2xl md:text-3xl">All the other bridges laughed at it, as it got submerged, unable to do anything.</p> <p class="m-2 text-2xl md:text-3xl">Ever since, it has never been the same</p><!----></noscript> <!----><!--[!--><!--[--><!--[!--><!--]--><!--]--><!--]--><!----><!----></section></div><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_ln0w6v = {
+						base: new URL(".", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("./_app/immutable/entry/start.Bv3-TjtH.js"),
+						import("./_app/immutable/entry/app.ZNY2Goh4.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
 </html>
